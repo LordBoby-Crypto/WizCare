@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import json, subprocess, sys
+from pathlib import Path
+
+SCRIPTS = [
+    'deimos_update_staging_contract.py',
+    'deimos_update_staging_smoke.py',
+]
+
+def run(repo: Path, name: str, reports: Path):
+    out = reports/(name.replace('.py', '.json'))
+    proc = subprocess.run([sys.executable, str(repo/'.codex/scripts'/name), str(repo), str(out)], text=True, capture_output=True)
+    data = json.loads(out.read_text(encoding='utf-8')) if out.exists() else {'ok': False, 'blockers': [proc.stderr or proc.stdout]}
+    return {'script': name, 'returncode': proc.returncode, 'ok': bool(data.get('ok')), 'report': str(out), 'data': data}
+
+def main():
+    repo = Path(sys.argv[1]) if len(sys.argv) > 1 else Path('.')
+    out = Path(sys.argv[2]) if len(sys.argv) > 2 else repo/'.codex/reports/phase38-staged-download-readiness.json'
+    reports = repo/'.codex/reports'; reports.mkdir(parents=True, exist_ok=True)
+    checks = [run(repo, name, reports) for name in SCRIPTS]
+    blockers = []
+    for check in checks:
+        if not check['ok']:
+            blockers.extend(check['data'].get('blockers') or [f"{check['script']} failed"])
+    result = {'ok': not blockers, 'phase': 38, 'summary': 'manual staged-download review flow readiness', 'checks': checks, 'blockers': blockers}
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(result, indent=2), encoding='utf-8')
+    print(json.dumps(result, indent=2))
+    return 1 if blockers else 0
+if __name__ == '__main__': raise SystemExit(main())

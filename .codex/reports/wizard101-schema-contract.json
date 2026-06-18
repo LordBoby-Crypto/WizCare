@@ -1,0 +1,97 @@
+{
+  "blockers": [],
+  "checks": [
+    {
+      "dataset": "enemies",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/enemies.jsonl"
+    },
+    {
+      "dataset": "gear",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/gear.jsonl"
+    },
+    {
+      "dataset": "jewels",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/jewels.jsonl"
+    },
+    {
+      "dataset": "mounts",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/mounts.jsonl"
+    },
+    {
+      "dataset": "npcs",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/npcs.jsonl"
+    },
+    {
+      "dataset": "pets",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/pets.jsonl"
+    },
+    {
+      "dataset": "pip_system",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/pip_system.jsonl"
+    },
+    {
+      "dataset": "quests",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/quests.jsonl"
+    },
+    {
+      "dataset": "reagents",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/reagents.jsonl"
+    },
+    {
+      "dataset": "spells",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/spells.jsonl"
+    },
+    {
+      "dataset": "stats",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/stats.jsonl"
+    },
+    {
+      "dataset": "worlds",
+      "exists": true,
+      "has_required_fields": true,
+      "passed": true,
+      "path": "/workspace/WizCare/data/wizard101/worlds.jsonl"
+    }
+  ],
+  "schema_files": [
+    "data/wizard101/schemas/enemy_record.json",
+    "data/wizard101/schemas/gear_record.json",
+    "data/wizard101/schemas/record_contract.json",
+    "data/wizard101/schemas/spell_record.json",
+    "data/wizard101/schemas/stat_and_pip_contract.json"
+  ],
+  "schema_version": "wizard101-knowledge-v1"
+}

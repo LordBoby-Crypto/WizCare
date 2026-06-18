@@ -1,0 +1,163 @@
+name: Build Deimos
+
+on:
+  push:
+    branches:
+      - dev-main  # Only trigger on dev-main branch pushes
+  
+  # Optional: Allow manual builds
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Full history for changelog
+    
+    - name: Extract version from Deimos.py
+      id: version
+      shell: bash
+      run: |
+        echo "Extracting version from Deimos.py..."
+        
+        # Check if Deimos.py exists
+        if [ ! -f "Deimos.py" ]; then
+          echo "ERROR: Deimos.py not found in repository root"
+          exit 1
+        fi
+        
+        # Extract version using grep and sed
+        VERSION_LINE=$(grep -n "tool_version: str = " Deimos.py | head -1)
+        
+        if [ -z "$VERSION_LINE" ]; then
+          echo "ERROR: Could not find 'tool_version: str = ' in Deimos.py"
+          echo "Make sure the version is defined as: tool_version: str = 'x.x.x'"
+          exit 1
+        fi
+        
+        # Extract the version number from the line
+        VERSION_NUMBER=$(echo "$VERSION_LINE" | sed -n "s/.*tool_version: str = ['\"]\\([^'\"]*\\)['\"].*/\\1/p")
+        
+        if [ -z "$VERSION_NUMBER" ]; then
+          echo "ERROR: Could not parse version number from: $VERSION_LINE"
+          echo "Make sure the version format is: tool_version: str = 'x.x.x'"
+          exit 1
+        fi
+        
+        # Validate version format (basic semver check)
+        if ! echo "$VERSION_NUMBER" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.-]+)?$'; then
+          echo "ERROR: Invalid version format: $VERSION_NUMBER"
+          echo "Expected format: x.x.x or x.x.x-suffix (e.g., 1.2.3 or 1.2.3-beta)"
+          exit 1
+        fi
+        
+        VERSION_TAG="v${VERSION_NUMBER}"
+        
+        echo "VERSION_TAG=${VERSION_TAG}" >> $GITHUB_OUTPUT
+        echo "VERSION_NUMBER=${VERSION_NUMBER}" >> $GITHUB_OUTPUT
+        echo "Found version: ${VERSION_NUMBER} (tag: ${VERSION_TAG})"
+    
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+
+    - name: Set up Python
+      run: uv python install
+
+    - name: Install dependencies
+      run: uv sync --group dev
+
+    - name: Build with PyInstaller
+      run: |
+        uv run --group dev pyinstaller --noconfirm --clean Deimos.spec
+        echo "Build completed successfully"
+        dir dist
+    
+
+    - name: Build updater helper artifact
+      shell: bash
+      run: |
+        cd libs/updater_helper
+        uv run --group dev pyinstaller --noconfirm --clean deimos_updater_helper.spec
+        cd ../..
+        python .codex/scripts/deimos_update_helper_artifact_report.py . .codex/reports/phase46-helper-artifact-report.json --write-checksum --require-artifact
+
+    - name: Verify helper release workflow readiness
+      shell: bash
+      run: |
+        python .codex/scripts/deimos_phase46_helper_workflow_readiness.py . .codex/reports/phase46-helper-workflow-readiness.json
+        python .codex/scripts/deimos_phase47_helper_postbuild_readiness.py . .codex/reports/phase47-helper-postbuild-readiness.json
+        python .codex/scripts/deimos_release_manifest_helper_integration.py . .codex/reports/phase47-helper-manifest-integration.json
+
+    - name: Generate release checksum and manifest
+      shell: bash
+      run: |
+        python .codex/scripts/deimos_checksum_release_artifacts.py . .codex/reports/release-checksum-report.json --write
+        python .codex/scripts/deimos_phase48_manifest_postbuild_readiness.py . .codex/reports/phase48-manifest-postbuild-readiness.json --strict-postbuild
+        cat dist/Deimos.exe.sha256
+
+    - name: Verify release upload safety
+      shell: bash
+      run: |
+        python .codex/scripts/deimos_release_upload_safety.py . .codex/reports/phase35-release-upload-safety-postbuild.json --require-artifact
+
+    - name: Verify required files exist
+      shell: bash
+      run: |
+        echo "Checking for required files..."
+        if [ ! -f "dist/Deimos.exe" ]; then
+          echo "ERROR: Deimos.exe not found in dist folder"
+          exit 1
+        fi
+        if [ ! -f "LICENSE" ]; then
+          echo "ERROR: LICENSE file not found"
+          exit 1
+        fi
+        echo "All required files found ✓"
+        echo "Deimos.exe size: $(stat -c%s dist/Deimos.exe) bytes"
+    
+    - name: Create build package
+      shell: powershell
+      run: |
+        Write-Host "Creating build package..."
+        New-Item -ItemType Directory -Path "release" -Force
+        
+        # Copy files to release directory
+        Copy-Item "dist/Deimos.exe" -Destination "release/"
+        Copy-Item "dist/Deimos.exe.sha256" -Destination "release/"
+        Copy-Item "dist/release-manifest.json" -Destination "release/"
+        Copy-Item "libs/updater_helper/dist/deimos-updater-helper.exe" -Destination "release/"
+        Copy-Item "libs/updater_helper/dist/deimos-updater-helper.exe.sha256" -Destination "release/"
+        Copy-Item "LICENSE" -Destination "release/"
+        
+        # Create zip file with version in name using PowerShell
+        $zipName = "Deimos-${{ steps.version.outputs.VERSION_TAG }}.zip"
+        Compress-Archive -Path "release/*" -DestinationPath $zipName -Force
+        
+        Write-Host "Build package created: $zipName"
+        Write-Host "Package contents:"
+        Get-ChildItem "release" | Format-Table Name, Length
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Deimos-${{ steps.version.outputs.VERSION_TAG }}
+        path: |
+          Deimos-${{ steps.version.outputs.VERSION_TAG }}.zip
+          dist/Deimos.exe
+          dist/Deimos.exe.sha256
+          dist/release-manifest.json
+          libs/updater_helper/dist/deimos-updater-helper.exe
+          libs/updater_helper/dist/deimos-updater-helper.exe.sha256
+        retention-days: 90
+
+    - name: Build Summary
+      shell: bash
+      run: |
+        echo "✅ Build ${{ steps.version.outputs.VERSION_TAG }} completed successfully!"
+        echo "📦 Package: Deimos-${{ steps.version.outputs.VERSION_TAG }}.zip"
+        echo "📁 Package size: $(stat -c%s "Deimos-${{ steps.version.outputs.VERSION_TAG }}.zip") bytes"
+        echo "⬇️ Download from Actions artifacts tab"

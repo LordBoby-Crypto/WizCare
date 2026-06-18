@@ -1,0 +1,16 @@
+{
+  "schema_version": "wizard101-record-contract-v1",
+  "purpose": "Shared contract for every Wizard101 fact record. Dataset-specific required fields are declared in data/wizard101/catalog_manifest.json.",
+  "required_common_fields": {
+    "id": "Stable internal id, namespaced by dataset when possible.",
+    "name": "Canonical in-game/wiki name.",
+    "source": "Source metadata with at least a URL or local source id and retrieval date.",
+    "verification": "Verification object with a level from catalog_manifest.json and reviewer/source details."
+  },
+  "verification_levels": {
+    "unverified": "Imported but not trusted for automation decisions.",
+    "source-linked": "Has a source link but exact facts are not fully checked.",
+    "exact-page-verified": "Facts were verified against exact source pages and may be used for constraints/warnings.",
+    "strategy-reviewed": "Facts were reviewed for automation strategy and may drive recommendations."
+  }
+}

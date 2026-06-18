@@ -1,0 +1,6 @@
+{
+  "schema_version": "wizard101-enemy-record-v1",
+  "required_fields": ["id", "name", "source", "verification", "combat", "locations", "drops"],
+  "combat_fields": ["school", "health", "rank", "classification", "resists", "boosts", "spells", "cheats", "pip_profile", "starting_pips", "masteries", "ai_notes"],
+  "automation_policy": "Enemy-specific combat planning requires strategy-reviewed verification; otherwise Deimos must use generic-safe fallback behavior."
+}
