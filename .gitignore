@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+logs/
+Deimos-Testconfig.ini
+venv
+*.exe
+testbot.txt
+*.spec
+!Deimos.spec
+build/
+dist/
+*.env
+.secret/*
+.secret
+.secrets
+*.lock
+!.gitignore
+.*
+# Binary assets and generated archives are attached to releases, not PR source diffs.
+*.zip
+*.png
+*.ico

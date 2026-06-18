@@ -1,0 +1,405 @@
+# Deimos 中文语言文件
+
+# 许可协议
+license_title=许可协议
+license_text=使用 Deimos 即表示你同意 GPL v3 许可协议。
+
+# 主横幅
+free_tool=Deimos 永远是免费工具。如果你为此付费，那你被骗了！
+
+# 标签页名称
+hotkeys=快捷键
+camera=镜头
+dev_utils=开发者工具
+utilities=实用工具
+stats=状态
+flythrough=飞行路径
+bot=脚本
+combat=战斗
+misc=杂项
+console=控制台
+
+# 开关
+toggles=开关
+speedhack=加速
+combat_toggle=自动战斗
+dialogue=自动对话
+sigil=传送阵
+questing=自动任务
+auto_pet=自动宠物
+auto_potion=自动药水
+
+# 快捷键
+hotkeys_label=快捷键
+quest_tp=任务传送
+freecam=自由视角
+freecam_tp=自由视角传送
+mass_hotkeys=群体快捷键
+mass_tp=群体传送
+xyz_sync=XYZ同步
+x_press=按下X键
+friend_tp=好友传送
+dialogue_side_quests=支线任务(+)
+kill_tool=结束工具
+
+# 快捷键管理器
+hotkey_manager=快捷键管理器
+bind_hotkey=绑定快捷键
+unbind_hotkey=解绑
+press_a_key=按下一个按键...
+reset_defaults=恢复默认
+unbound=未绑定
+key_conflict=按键冲突
+cat_toggles=开关
+cat_teleports=传送
+cat_multi_client=多开
+cat_camera=镜头
+cat_system=系统
+
+# 镜头
+set_camera_position=设置位置
+yaw=偏航
+roll=横滚
+pitch=俯仰
+entity=实体
+toggle_camera_collision=切换碰撞
+distance=距离
+dist_min=最小距离
+dist_max=最大距离
+copy_camera_position=复制镜头坐标
+populate_camera=填充
+
+# 开发工具
+advanced_warning=以下工具仅适用于高级用户，官方不提供支持。
+tp_utils=传送工具
+custom_tp=自定义传送
+entity_name=实体名称
+available_entities=可用实体
+available_paths=可用路径
+zone_name=区域名称
+go_to_zone=前往区域
+mass_go_to_zone=群体前往区域
+world_name=世界名称
+go_to_world=前往世界
+mass_go_to_world=群体前往世界
+go_to_bazaar=前往集市
+mass_go_to_bazaar=群体前往集市
+refill_potions=补充药水
+mass_refill_potions=群体补充药水
+
+# 状态
+caster_target_indices=施法者/目标索引
+dmg=伤害
+base_dmg=基础伤害
+school=系别
+crit=暴击
+view_stats=查看状态
+copy_stats=复制状态
+no_client_selected=未选择客户端。
+swap_members=交换成员
+swap_sides=交换阵营
+not_in_combat=当前选择的客户端未处于战斗中。
+
+# 飞行路径
+import_flythrough=导入飞行路径
+export_flythrough=导出飞行路径
+execute_flythrough=执行飞行路径
+kill_flythrough=停止飞行路径
+
+# 脚本
+import_bot=导入脚本
+export_bot=导出脚本
+run_bot=运行脚本
+kill_bot=停止脚本
+
+# 战斗
+import_playstyle=导入战斗风格
+export_playstyle=导出战斗风格
+set_playstyles=设置战斗风格
+
+# 杂项
+scale=缩放
+set_scale=设置缩放
+select_pet_world=选择宠物世界：
+
+# 控制台
+console_support=请求帮助时请附带日志。
+collapse_expand_logs=折叠 / 展开日志
+copy_logs=复制日志
+
+# 工具提示
+tooltip_license=许可协议
+tooltip_wiki_hotkeys=维基：快捷键
+tooltip_source_code=源代码
+tooltip_discord=Discord 社区
+tooltip_wiki_camera=维基：镜头
+tooltip_wiki_utilities=维基：实用工具
+tooltip_wiki_stats=维基：状态
+tooltip_wiki_flythroughs=维基：飞行路径
+tooltip_wiki_bots=维基：脚本
+tooltip_wiki_playstyles=维基：战斗风格
+
+# 区域工具提示
+tooltip_section_camera=设置镜头位置、朝向、锚点和距离
+tooltip_section_utils=使用当前镜头数值填充字段、复制位置或切换碰撞
+tooltip_section_tp_utils=传送到坐标或指定实体
+tooltip_section_navigation=前往区域、世界、集市，或补充药水
+
+# 启动器
+launcher=启动器
+saved_accounts=账号管理
+hooked_clients=客户端管理
+unhook_client=取消注入
+hook_client=注入
+kill_client=结束
+relaunch_client=重新启动
+unmanaged_clients=可用客户端
+add_account=添加账号
+remove_account=移除账号
+launch_login=启动并登录
+game_path=游戏路径
+nickname=昵称
+username=用户名
+password=密码
+save_account=保存
+no_accounts_selected=未选择账号。
+account_added=账号保存成功。
+account_removed=账号已移除。
+launching_instances=正在启动实例...
+tooltip_wiki_launcher=维基：启动器
+settings=设置
+
+# 状态标签
+status_dead=死亡
+status_stunned=眩晕
+status_friendly=友方
+status_hostile=敌对
+status_unknown=未知
+already_active=已激活
+recent_imports=最近导入
+no_recent_imports=暂无最近导入
+
+# 客户端信息
+client=客户端
+zone=区域
+
+# 设置窗口
+settings_title=设置
+settings_general=通用
+settings_appearance=外观
+settings_sigil=传送阵
+settings_questing=任务
+settings_auto_pet=自动宠物
+settings_combat=战斗
+settings_launcher=启动器
+settings_restart_note=* 需要重启后生效
+settings_save=保存
+settings_cancel=取消
+
+setting_speed_multiplier=速度倍率
+setting_use_potions=使用药水
+setting_buy_potions=购买药水
+setting_rich_presence=在线状态显示
+setting_drop_logging=掉落日志
+setting_use_anti_afk=防挂机
+setting_bg_color=背景
+setting_alt_bg=输入框背景
+setting_text_color=文字颜色
+setting_button_color=按钮颜色
+setting_stroke_color=描边颜色
+setting_titlebar_bg=标题栏背景
+settings_import_theme=导入主题
+settings_export_theme=导出主题
+settings_theme=主题
+setting_locale=语言
+setting_font=字体
+setting_font_size=字体大小
+setting_use_team_up=使用组队匹配
+setting_client_to_follow=跟随的客户端
+setting_client_to_boost=增益目标客户端
+setting_friend_teleport=好友传送
+setting_gear_switching=单人区域切换装备
+setting_hitter_client=输出客户端
+setting_ignore_pet_level_up=忽略宠物升级
+setting_only_dance_game=只玩跳舞游戏
+setting_remember_chosen_clients=记住已选择客户端
+setting_kill_minions_first=优先击杀小怪
+setting_auto_team_combat=自动团队战斗
+setting_discard_duplicates=丢弃重复卡牌
+
+# 通用
+ok=确定
+cancel=取消
+close=关闭
+search=搜索
+copy=复制
+copied=已复制！
+reset_to_default=恢复默认值（{0}）
+always_on_top=窗口置顶
+not_on_top=取消置顶
+individual=单个客户端
+all_clients=所有客户端
+navigation=导航
+cat_other=其他
+fetch_player_gid=获取玩家 GID
+copy_text=复制文本：{0}
+
+# 弹窗
+ui_tree=UI 树
+ui_tree_hint=点击需要的路径即可复制到剪贴板。
+entity_list=实体列表
+entity_list_hint=点击复制。右键打开传送 / 镜头选项。
+tp_to_entity=传送到实体
+anchor_cam_to_entity=将镜头锚定到实体
+
+# 设置附加项
+import_lang_file=导入 .lang 文件
+import_lang_title=导入语言文件
+overwrite_binding={0} 已经绑定到“{1}”。\n是否覆盖？
+
+# 底部信息
+position_xyz=位置（XYZ）：
+orientation_pry=朝向（PRY）：
+
+# 状态弹窗
+combat_stats=战斗统计
+
+# Phase 29 GUI bot validation keys
+bot_validation_failed_title=机器人验证失败
+bot_validation_warning_title=机器人验证警告
+bot_validation_run_anyway=仍然运行此机器人吗？
+bot_validation_empty_script=机器人脚本为空。
+bot_validation_no_actions=机器人脚本没有可执行动作。
+bot_validation_unknown_command=未知命令：{0}
+bot_validation_bad_client_selector=不支持的客户端选择器：{0}
+bot_validation_missing_zone=缺少区域或位置参数。
+bot_validation_negative_wait=等待时间不能为负数。
+bot_validation_long_wait=等待时间异常偏长。
+bot_validation_combat_marker_client_range=战斗标记的客户端编号超出范围。
+bot_validation_combat_without_client_metadata=发现战斗标记，但没有声明 @clients 元数据。
+bot_validation_passed=机器人验证通过。
+
+# Phase 37 manual update check keys
+check_for_updates=检查更新
+tooltip_check_for_updates=检查 GitHub Releases 是否有新的 Deimos 版本。
+update_checking=正在检查...
+update_available_title=发现更新
+update_available_message=Deimos {0} 已可用。当前版本为 {1}。
+update_not_available_title=没有可用更新
+update_not_available_message=你正在使用已知的最新版本：{0}。
+update_error_title=更新检查失败
+update_error_message=无法检查更新。
+update_open_release=打开发布页面
+update_unknown_version=未知
+update_asset_contract=预期发布资源：Deimos.exe、Deimos.exe.sha256、release-manifest.json
+update_install_locked=此版本已禁用自动安装。
+update_warnings_header=警告：
+
+# Phase 38 staged update download keys
+update_download_to_staging=下载到暂存文件夹
+update_choose_staging_folder=选择更新暂存文件夹
+update_staging_downloading=正在下载更新资源...
+update_staging_success_title=更新已下载
+update_staging_success_message=更新资源已下载并验证到：\n{0}
+update_staging_failed_title=更新下载失败
+update_staging_failed_message=无法下载并验证更新资源。
+update_staging_locked=下载的文件仅用于暂存；Deimos.exe 未被替换。
+update_staging_cancelled=已取消更新下载。
+
+# Phase 39 staged manifest review keys
+update_review_staged_files=查看暂存文件
+update_review_title=暂存更新审核
+update_review_summary=在未来任何安装步骤之前审核暂存的更新文件。
+update_review_release_tag=发布标签：{0}
+update_review_checksum_status=校验和状态：{0}
+update_review_install_locked=仅审核：Deimos.exe 未被替换。
+update_review_files_header=暂存文件：
+update_review_manifest_missing=release-manifest.json 未暂存或无法读取。
+
+# Phase 40 update install design review keys
+update_install_design_button=查看安装设计
+update_install_design_title=更新安装设计审核
+update_install_design_summary=审核未来安装要求。当前没有可用的安装操作。
+update_install_design_locked=安装仍然被禁用。这只是设计审核。
+update_install_design_blockers=安装阻止项：
+
+# Phase 54 helper dry-run GUI review keys
+update_helper_dry_run_button=查看助手空运行
+update_helper_dry_run_title=助手空运行审核
+update_helper_dry_run_summary=审核助手空运行计划。当前没有可用的助手启动或安装操作。
+update_helper_dry_run_locked=仅审核：助手未启动，也未尝试安装。
+update_helper_dry_run_command=空运行命令预览：
+update_helper_dry_run_log_events=助手日志事件：
+update_helper_dry_run_log_missing=暂存文件夹中未找到助手空运行日志。
+
+# Phase 56 helper dry-run staged log detection keys
+update_helper_dry_run_log_status=Helper log status: {0}
+update_helper_dry_run_missing_events=Missing dry-run log events:
+update_helper_dry_run_invalid_entries=Invalid dry-run log entries:
+
+# Phase 57 staged update UX/report polish keys
+update_staged_ux_headline=状态：{0}
+update_staged_ux_severity=检查状态：{0}
+update_staged_ux_install_lock=安装执行仍处于锁定状态。
+update_staged_ux_attention=在信任此暂存更新之前需要处理问题。
+update_resolution_header=问题解决指导：
+update_resolution_next_steps=后续步骤：
+update_resolution_no_problems=未检测到暂存更新问题。
+update_resolution_install_locked=安装执行按设计保持锁定。
+
+# Phase 59 staged update diagnostics export
+update_export_diagnostics=导出诊断包
+update_diagnostics_saved_title=诊断包已保存
+update_diagnostics_saved_message=诊断信息已导出到：
+{0}
+update_diagnostics_failed_title=诊断导出失败
+update_diagnostics_failed_message=无法导出暂存更新诊断信息。
+update_diagnostics_bundle_locked=诊断包仅用于查看，并且不包含可执行文件。
+
+update_diagnostics_compare=Compare diagnostics
+update_diagnostics_compare_changed=Diagnostics differences found
+update_diagnostics_compare_safe=Diagnostics comparison is read-only
+
+# Phase 63 diagnostics comparison GUI action scaffold
+update_diagnostics_compare_title=Compare Diagnostics Bundles
+update_diagnostics_compare_locked=Review only: no executables are imported and no install action is available.
+update_diagnostics_compare_headline=Result: {0}
+update_diagnostics_compare_severity=Severity: {0}
+update_diagnostics_compare_changes=Changes:
+update_diagnostics_compare_no_changes=No tracked staged-update state changes were found.
+update_diagnostics_compare_next_steps=Next steps:
+update_diagnostics_compare_choose_before=Choose Earlier Diagnostics Bundle
+update_diagnostics_compare_choose_after=Choose Later Diagnostics Bundle
+update_diagnostics_compare_summary=Diagnostics comparison completed.
+update_diagnostics_compare_failed_title=Diagnostics Comparison Failed
+update_diagnostics_compare_failed_message=Could not compare diagnostics bundles.
+
+tooltip_compare_diagnostics_bundles=Compare two exported staged-update diagnostics bundles. Review only; no executables are imported and no install action is available.
+
+# Phase 65 diagnostics comparison export/share polish
+update_diagnostics_compare_export_title=Export Diagnostics Comparison Report
+update_diagnostics_compare_export_saved_title=Diagnostics Comparison Exported
+update_diagnostics_compare_export_saved_message=Comparison report bundle saved.
+
+# Phase 66 diagnostics comparison export GUI polish
+update_diagnostics_compare_export_path=Saved to: {0}
+update_diagnostics_compare_export_safety=The bundle is read-only and excludes executable payloads.
+update_diagnostics_compare_export_default=Default export filename: {0}
+
+# Phase 68 diagnostics comparison exported-report import GUI polish
+update_diagnostics_report_import=Import diagnostics report
+update_diagnostics_report_import_title=Review Diagnostics Comparison Report
+update_diagnostics_report_import_locked=Review only: no executables are imported and no install action is available.
+update_diagnostics_report_import_status=Status: {0}
+update_diagnostics_report_import_severity=Severity: {0}
+update_diagnostics_report_import_comparison_headline=Comparison result: {0}
+update_diagnostics_report_import_errors=Import problems:
+update_diagnostics_report_import_changes=Reported changes:
+update_diagnostics_report_import_next_steps=Next steps:
+update_diagnostics_report_import_choose=Choose Diagnostics Comparison Report
+update_diagnostics_report_import_safe_title=Diagnostics report is safe to review.
+update_diagnostics_report_import_blocked_title=Diagnostics report import was blocked.
+update_diagnostics_report_import_failed_title=Diagnostics Report Import Failed
+update_diagnostics_report_import_failed_message=Could not import diagnostics comparison report.
+tooltip_import_diagnostics_comparison_report=Import and review a safe exported diagnostics comparison report. Review only; no executables are imported and no install action is available.
+update_diagnostics_report_import_button_safety=Read-only support/debug review; executables and install actions stay blocked.

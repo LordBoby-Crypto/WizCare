@@ -1,0 +1,6 @@
+{
+  "schema_version": "wizard101-stat-pip-contract-v1",
+  "stats": ["damage", "resistance", "accuracy", "critical", "block", "pierce", "pip_conversion", "power_pip_chance", "shadow_pip_rating", "outgoing_healing", "incoming_healing", "stun_resistance", "archmastery", "health", "mana", "energy", "fishing_luck", "speed"],
+  "pip_topics": ["normal_pips", "power_pips", "school_pips", "shadow_pips", "archmastery", "pip_conversion", "starting_pips", "enemy_pip_rules", "spell_cost_rules"],
+  "completion_policy": "Combat math cannot be considered complete until every stat and pip topic has verified formulas, level brackets where applicable, and tests against known examples."
+}

@@ -1,0 +1,121 @@
+{
+  "complete": false,
+  "completion_note": "The framework is ready, but the game-wide fact import is not complete until every required dataset is populated and verified to its required level.",
+  "counts": {
+    "enemies": 0,
+    "gear": 0,
+    "jewels": 0,
+    "mounts": 0,
+    "npcs": 0,
+    "pets": 0,
+    "pip_system": 0,
+    "quests": 0,
+    "reagents": 0,
+    "spells": 0,
+    "stats": 0,
+    "worlds": 0
+  },
+  "dataset_status": {
+    "enemies": {
+      "complete": false,
+      "minimum_verification": "strategy-reviewed",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "gear": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "jewels": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "mounts": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "npcs": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "pets": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "pip_system": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "quests": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "reagents": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "spells": {
+      "complete": false,
+      "minimum_verification": "strategy-reviewed",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "stats": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    },
+    "worlds": {
+      "complete": false,
+      "minimum_verification": "exact-page-verified",
+      "records": 0,
+      "required_for_complete_project": true,
+      "verified_records": 0
+    }
+  },
+  "issues": [],
+  "missing_datasets": [
+    "enemies",
+    "gear",
+    "jewels",
+    "mounts",
+    "npcs",
+    "pets",
+    "pip_system",
+    "quests",
+    "reagents",
+    "spells",
+    "stats",
+    "worlds"
+  ],
+  "schema_version": "wizard101-knowledge-v1",
+  "total_records": 0
+}

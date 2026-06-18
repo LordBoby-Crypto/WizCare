@@ -1,0 +1,7 @@
+{
+  "schema_version": "wizard101-gear-record-v1",
+  "required_fields": ["id", "name", "source", "verification", "item_type", "equip_slot", "requirements", "stats", "sockets", "sources"],
+  "equip_slots": ["hat", "robe", "boots", "wand", "athame", "amulet", "ring", "deck", "pet", "mount", "jewel", "elixir", "other"],
+  "requirements_fields": ["level", "school", "account_flags", "quest_unlocks", "pvp_rank", "crafting_rank"],
+  "stat_fields": ["damage", "resistance", "accuracy", "critical", "block", "pierce", "pip_conversion", "power_pip_chance", "shadow_pip_rating", "outgoing_healing", "incoming_healing", "stun_resistance", "archmastery", "health", "mana", "energy", "speed"]
+}

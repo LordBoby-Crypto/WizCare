@@ -1,0 +1,14 @@
+{
+  "blockers": [],
+  "category_groups": [
+    "enemies",
+    "gear",
+    "quests",
+    "spells",
+    "worlds"
+  ],
+  "checks": [],
+  "online": false,
+  "schema_version": "wizard101-source-catalog-v1",
+  "source_count": 2
+}

@@ -1,0 +1,56 @@
+{
+  "blockers": [],
+  "checks": [
+    {
+      "cmd": [
+        "/root/.pyenv/versions/3.13.13/bin/python",
+        ".codex/scripts/deimos_diagnostics_report_import_gui_wiring_contract.py"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"blockers\": [],\n  \"checks\": [\n    {\n      \"file\": \"update_check\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/src/gui/update_check.py\"\n    },\n    {\n      \"file\": \"tab_hotkeys\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/src/gui/tab_hotkeys.py\"\n    },\n    {\n      \"file\": \"locale_en\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/locale/en.lang\"\n    },\n    {\n      \"file\": \"locale_zh\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/locale/zh.lang\"\n    }\n  ],\n  \"name\": \"diagnostics-report-import-gui-wiring-contract\",\n  \"phase\": 69\n}\n"
+    },
+    {
+      "cmd": [
+        "/root/.pyenv/versions/3.13.13/bin/python",
+        ".codex/scripts/deimos_diagnostics_report_import_gui_contract.py"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"blockers\": [],\n  \"checks\": [\n    {\n      \"file\": \"update_system\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/src/update_system.py\"\n    },\n    {\n      \"file\": \"update_check\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/src/gui/update_check.py\"\n    },\n    {\n      \"file\": \"tab_hotkeys\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/src/gui/tab_hotkeys.py\"\n    },\n    {\n      \"file\": \"locale_en\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/locale/en.lang\"\n    },\n    {\n      \"file\": \"locale_zh\",\n      \"missing\": [],\n      \"passed\": true,\n      \"path\": \"/workspace/WizCare/locale/zh.lang\"\n    }\n  ],\n  \"name\": \"diagnostics-report-import-gui-contract\",\n  \"phase\": 68\n}\n"
+    },
+    {
+      "cmd": [
+        "/root/.pyenv/versions/3.13.13/bin/python",
+        ".codex/scripts/deimos_diagnostics_report_import_gui_smoke.py"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\n  \"blockers\": [],\n  \"name\": \"diagnostics-report-import-gui-smoke\",\n  \"phase\": 68,\n  \"scenarios\": [\n    {\n      \"errors\": [],\n      \"name\": \"safe\",\n      \"passed\": true,\n      \"status\": \"valid\",\n      \"valid\": true\n    },\n    {\n      \"errors\": [\n        \"executable payloads are not allowed in comparison exports: ['Deimos.exe']\"\n      ],\n      \"name\": \"unsafe\",\n      \"passed\": true,\n      \"status\": \"blocked\",\n      \"valid\": false\n    },\n    {\n      \"errors\": [\n        \"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"\n      ],\n      \"name\": \"malformed\",\n      \"passed\": true,\n      \"status\": \"blocked\",\n      \"valid\": false\n    }\n  ]\n}\n"
+    },
+    {
+      "cmd": [
+        "/root/.pyenv/versions/3.13.13/bin/python",
+        "-m",
+        "py_compile",
+        "src/update_system.py",
+        "src/gui/update_check.py",
+        "src/gui/tab_hotkeys.py",
+        ".codex/scripts/deimos_diagnostics_report_import_gui_wiring_contract.py"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "helper_launch_from_gui_enabled": false,
+  "install_execution_enabled": false,
+  "name": "diagnostics-report-import-gui-wiring-readiness",
+  "passed": true,
+  "phase": 69,
+  "real_install_attempted": false
+}

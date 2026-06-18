@@ -1,0 +1,32 @@
+{
+  "blockers": [],
+  "name": "diagnostics-report-import-gui-smoke",
+  "phase": 68,
+  "scenarios": [
+    {
+      "errors": [],
+      "name": "safe",
+      "passed": true,
+      "status": "valid",
+      "valid": true
+    },
+    {
+      "errors": [
+        "executable payloads are not allowed in comparison exports: ['Deimos.exe']"
+      ],
+      "name": "unsafe",
+      "passed": true,
+      "status": "blocked",
+      "valid": false
+    },
+    {
+      "errors": [
+        "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+      ],
+      "name": "malformed",
+      "passed": true,
+      "status": "blocked",
+      "valid": false
+    }
+  ]
+}

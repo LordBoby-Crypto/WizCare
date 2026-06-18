@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - dev-main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+
+    - name: Set up Python
+      run: uv python install
+
+    - name: Install dependencies
+      run: uv sync --group dev
+
+    - name: Build with PyInstaller
+      run: |
+        uv run --group dev pyinstaller --noconfirm --clean Deimos.spec
+
+
+    - name: Build updater helper artifact
+      shell: bash
+      run: |
+        cd libs/updater_helper
+        uv run --group dev pyinstaller --noconfirm --clean deimos_updater_helper.spec
+        cd ../..
+        python .codex/scripts/deimos_update_helper_artifact_report.py . .codex/reports/phase46-helper-artifact-report.json --write-checksum
+
+    - name: Verify helper release workflow readiness
+      shell: bash
+      run: |
+        python .codex/scripts/deimos_phase46_helper_workflow_readiness.py . .codex/reports/phase46-helper-workflow-readiness.json
+        python .codex/scripts/deimos_phase47_helper_postbuild_readiness.py . .codex/reports/phase47-helper-postbuild-readiness.json
+
+    - name: Generate release checksum and manifest
+      shell: bash
+      run: |
+        python .codex/scripts/deimos_checksum_release_artifacts.py . .codex/reports/release-checksum-report.json --write
+        python .codex/scripts/deimos_phase48_manifest_postbuild_readiness.py . .codex/reports/phase48-manifest-postbuild-readiness.json
+        cat dist/Deimos.exe.sha256
+
+    - name: Verify release upload safety
+      shell: bash
+      run: |
+        python .codex/scripts/deimos_release_upload_safety.py . .codex/reports/phase35-release-upload-safety-postbuild.json --require-artifact
+
+    - name: Verify build output
+      shell: bash
+      run: |
+        if [ ! -f "dist/Deimos.exe" ]; then
+          echo "Build failed: Deimos.exe not found"
+          exit 1
+        fi
+        if [ ! -f "dist/Deimos.exe.sha256" ]; then
+          echo "Build failed: Deimos.exe.sha256 not found"
+          exit 1
+        fi
+        if [ ! -f "dist/release-manifest.json" ]; then
+          echo "Build failed: release-manifest.json not found"
+          exit 1
+        fi
+        echo "Build OK: $(stat -c%s dist/Deimos.exe) bytes"
+        if [ -f "libs/updater_helper/dist/deimos-updater-helper.exe" ]; then echo "Helper OK: $(stat -c%s libs/updater_helper/dist/deimos-updater-helper.exe) bytes"; fi

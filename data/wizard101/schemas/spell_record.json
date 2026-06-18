@@ -1,0 +1,7 @@
+{
+  "schema_version": "wizard101-spell-record-v1",
+  "required_fields": ["id", "name", "source", "verification", "school", "requirements", "pip_cost", "effects", "acquisition"],
+  "requirement_fields": ["level", "school", "quest", "trainer", "spellement_path", "item_card_source", "pvp_only", "shadow_school_unlock"],
+  "effect_fields": ["damage", "heal", "ward", "charm", "aura", "global", "manipulation", "summon", "polymorph", "shadow", "conditional", "aftereffect"],
+  "automation_policy": "Spell use recommendations require strategy-reviewed records and must distinguish trained spells, treasure cards, item cards, and enemy-only spells."
+}

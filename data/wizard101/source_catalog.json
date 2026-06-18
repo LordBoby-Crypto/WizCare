@@ -1,0 +1,54 @@
+{
+  "schema_version": "wizard101-source-catalog-v1",
+  "primary_sources": [
+    {
+      "id": "wizard101central-wiki",
+      "name": "Wizard101 Central Wiki",
+      "base_url": "https://wiki.wizard101central.com/wiki/",
+      "mediawiki_api": "https://wiki.wizard101central.com/wiki/api.php",
+      "source_type": "community-wiki",
+      "use_for": ["items", "enemies", "spells", "quests", "npcs", "locations", "drops"]
+    },
+    {
+      "id": "wizard101-official-player-guide",
+      "name": "Wizard101 Official Player Guide",
+      "base_url": "https://www.wizard101.com/w101playersguide/",
+      "source_type": "official-guide",
+      "use_for": ["stat-definitions", "pip-system", "gear-slot-definitions", "game-mechanics"]
+    }
+  ],
+  "category_seed_queries": {
+    "gear": [
+      "Category:Any School Hats",
+      "Category:Any School Robes",
+      "Category:Any School Boots",
+      "Category:Any School Wands",
+      "Category:Any School Athames",
+      "Category:Any School Amulets",
+      "Category:Any School Rings",
+      "Category:Any School Decks"
+    ],
+    "enemies": [
+      "Category:Creatures",
+      "Category:Bosses"
+    ],
+    "spells": [
+      "Category:Spells",
+      "Category:Item Cards",
+      "Category:Treasure Cards"
+    ],
+    "quests": [
+      "Category:Quests"
+    ],
+    "worlds": [
+      "Category:Worlds",
+      "Category:Locations"
+    ]
+  },
+  "ingestion_policy": {
+    "store_raw_source_snapshots": true,
+    "never_mark_strategy_reviewed_from_raw_scrape": true,
+    "manual_review_required_for_auto_combat": true,
+    "record_source_url_and_retrieved_at": true
+  }
+}

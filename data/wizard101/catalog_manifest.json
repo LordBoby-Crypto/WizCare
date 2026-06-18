@@ -1,0 +1,264 @@
+{
+  "schema_version": "wizard101-knowledge-v1",
+  "description": "Manifest for verified Wizard101 knowledge used by Deimos/WizCare automation. The catalog is intentionally fact-first: unknown data must stay absent instead of being guessed, and completion requires comprehensive gear, enemy, spell, stat, pip, quest, world, NPC, pet, mount, jewel, reagent, and source coverage.",
+  "datasets": {
+    "enemies": {
+      "path": "data/wizard101/enemies.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "combat",
+        "locations",
+        "drops"
+      ]
+    },
+    "gear": {
+      "path": "data/wizard101/gear.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "item_type",
+        "equip_slot",
+        "requirements",
+        "stats",
+        "sockets",
+        "sources"
+      ]
+    },
+    "spells": {
+      "path": "data/wizard101/spells.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "school",
+        "requirements",
+        "pip_cost",
+        "effects",
+        "acquisition"
+      ]
+    },
+    "quests": {
+      "path": "data/wizard101/quests.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "world",
+        "quest_line",
+        "requirements",
+        "steps",
+        "rewards"
+      ]
+    },
+    "stats": {
+      "path": "data/wizard101/stats.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "category",
+        "formula",
+        "applies_to"
+      ]
+    },
+    "pip_system": {
+      "path": "data/wizard101/pip_system.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "rules",
+        "formula"
+      ]
+    },
+    "worlds": {
+      "path": "data/wizard101/worlds.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "zones"
+      ]
+    },
+    "npcs": {
+      "path": "data/wizard101/npcs.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "locations",
+        "roles"
+      ]
+    },
+    "pets": {
+      "path": "data/wizard101/pets.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "school",
+        "stats",
+        "talents",
+        "sources"
+      ]
+    },
+    "mounts": {
+      "path": "data/wizard101/mounts.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "stats",
+        "sources"
+      ]
+    },
+    "jewels": {
+      "path": "data/wizard101/jewels.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "jewel_type",
+        "level_band",
+        "stats",
+        "sources"
+      ]
+    },
+    "reagents": {
+      "path": "data/wizard101/reagents.jsonl",
+      "required_fields": [
+        "id",
+        "name",
+        "source",
+        "verification",
+        "sources",
+        "used_by"
+      ]
+    }
+  },
+  "verification_levels": [
+    "unverified",
+    "source-linked",
+    "exact-page-verified",
+    "strategy-reviewed"
+  ],
+  "combat_policy": {
+    "recommendations_require_strategy_review": true,
+    "enemy_specific_rules_require_exact_page_verified": true,
+    "unknown_enemy_behavior": "fall_back_to_generic_safe_config"
+  },
+  "equipment_slots": [
+    "hat",
+    "robe",
+    "boots",
+    "wand",
+    "athame",
+    "amulet",
+    "ring",
+    "deck",
+    "pet",
+    "mount",
+    "jewel",
+    "elixir",
+    "other"
+  ],
+  "schools": [
+    "balance",
+    "death",
+    "fire",
+    "ice",
+    "life",
+    "myth",
+    "storm",
+    "shadow",
+    "sun",
+    "moon",
+    "star",
+    "astral",
+    "universal"
+  ],
+  "combat_stat_categories": [
+    "damage",
+    "resistance",
+    "accuracy",
+    "critical",
+    "block",
+    "pierce",
+    "pip_conversion",
+    "power_pip_chance",
+    "shadow_pip_rating",
+    "outgoing_healing",
+    "incoming_healing",
+    "stun_resistance",
+    "archmastery",
+    "health",
+    "mana",
+    "energy",
+    "fishing_luck",
+    "speed"
+  ],
+  "coverage_targets": {
+    "enemies": {
+      "required_for_complete_project": true,
+      "minimum_verification": "strategy-reviewed"
+    },
+    "gear": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "spells": {
+      "required_for_complete_project": true,
+      "minimum_verification": "strategy-reviewed"
+    },
+    "quests": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "stats": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "pip_system": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "worlds": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "npcs": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "pets": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "mounts": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "jewels": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    },
+    "reagents": {
+      "required_for_complete_project": true,
+      "minimum_verification": "exact-page-verified"
+    }
+  }
+}

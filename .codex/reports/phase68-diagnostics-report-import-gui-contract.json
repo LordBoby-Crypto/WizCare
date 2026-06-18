@@ -1,0 +1,37 @@
+{
+  "blockers": [],
+  "checks": [
+    {
+      "file": "update_system",
+      "missing": [],
+      "passed": true,
+      "path": "/workspace/WizCare/src/update_system.py"
+    },
+    {
+      "file": "update_check",
+      "missing": [],
+      "passed": true,
+      "path": "/workspace/WizCare/src/gui/update_check.py"
+    },
+    {
+      "file": "tab_hotkeys",
+      "missing": [],
+      "passed": true,
+      "path": "/workspace/WizCare/src/gui/tab_hotkeys.py"
+    },
+    {
+      "file": "locale_en",
+      "missing": [],
+      "passed": true,
+      "path": "/workspace/WizCare/locale/en.lang"
+    },
+    {
+      "file": "locale_zh",
+      "missing": [],
+      "passed": true,
+      "path": "/workspace/WizCare/locale/zh.lang"
+    }
+  ],
+  "name": "diagnostics-report-import-gui-contract",
+  "phase": 68
+}
